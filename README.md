@@ -1,2 +1,8 @@
-A sample command-line application with an entrypoint in `bin/`, library code
-in `lib/`, and example unit test in `test/`.
+Check my dart program practice on this Folder
+
+📁lib/📁dart_practice
+
+
+
+
+(❁´◡`❁)
