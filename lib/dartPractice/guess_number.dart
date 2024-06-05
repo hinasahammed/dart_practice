@@ -11,7 +11,7 @@ void main() {
   } else if (userNumber > getingRandomNumber) {
     print("Too High");
   } else if (userNumber == getingRandomNumber) {
-    print("You guessed right");
+    print("Exactly right");
   } else {
     print("Check your number");
   }
