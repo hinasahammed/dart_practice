@@ -36,5 +36,5 @@ void generatePassword(int size) {
     password.shuffle();
   }
   String combinedPassword = password.join();
-  print(combinedPassword);
+  print("Here is your password: $combinedPassword");
 }
