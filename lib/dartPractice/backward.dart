@@ -1,7 +1,7 @@
 import 'dart:io';
 
 void main() {
-  print("Enter something");
+  print("Enter a sentence");
   String userValue = stdin.readLineSync()!;
   var newValue = reverseString(userValue);
   print(newValue);

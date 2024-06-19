@@ -14,11 +14,11 @@ void main() {
 
 void selectPasswordType(String type) {
   if (type == 'weak') {
-    generatePassword(3);
+    generatePassword(2);
   } else if (type == 'medium') {
-    generatePassword(6);
+    generatePassword(4);
   } else if (type == 'strong') {
-    generatePassword(12);
+    generatePassword(10);
   } else {
     print("Check your password type");
   }
@@ -36,5 +36,5 @@ void generatePassword(int size) {
     password.shuffle();
   }
   String combinedPassword = password.join();
-  print(combinedPassword);
+  print("Here is your password: $combinedPassword");
 }
