@@ -1,12 +1,14 @@
+import 'dart:io';
 import 'dart:math';
 
 void main() {
-  int n = 11;
+  print("Enter a number");
+  int n = int.parse(stdin.readLineSync()!);
 
   if (isPossible(n)) {
     print("Yes");
   } else {
-    print("no");
+    print("No");
   }
 }
 
@@ -25,7 +27,6 @@ bool isPrime(int n) {
 }
 
 bool isPossible(int n) {
-
   if (isPrime(n) && isPrime(n - 2)) {
     return true;
   } else {
