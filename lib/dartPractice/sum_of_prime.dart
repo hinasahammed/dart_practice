@@ -6,7 +6,7 @@ void main() {
   if (isPossible(n)) {
     print("Yes");
   } else {
-    print("No");
+    print("no");
   }
 }
 
@@ -24,10 +24,9 @@ bool isPrime(int n) {
   return true;
 }
 
-bool isPossible(int N) {
-  // if the number is prime,
-  // and number-2 is also prime
-  if (isPrime(N) && isPrime(N - 2)) {
+bool isPossible(int n) {
+
+  if (isPrime(n) && isPrime(n - 2)) {
     return true;
   } else {
     return false;
