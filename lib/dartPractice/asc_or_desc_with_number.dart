@@ -3,7 +3,7 @@ import 'dart:io';
 void main() {
   List<int> userValue = [];
   List<int> desc = [];
-  print("first enter your numbers length");
+  print("first enter your value length");
   int len = int.parse(stdin.readLineSync()!);
 
   print("Enter integer numbers");
