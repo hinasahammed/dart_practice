@@ -8,7 +8,7 @@ void main() {
 
   print("Enter Your values");
   for (var i = 0; i < int.parse(len); i++) {
-    var value = stdin.readLineSync()!;
+    int value = int.parse(stdin.readLineSync()!);
     userValue.add(value);
   }
   print(
