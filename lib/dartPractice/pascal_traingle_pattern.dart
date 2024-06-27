@@ -10,7 +10,7 @@ void main() {
       stdout.write(" ");
     }
     for (int j = 0; j <= i; j++) {
-      stdout.write('$number');
+      stdout.write('$number ');
 
       number = number * (i - j) ~/ (j + 1);
     }
