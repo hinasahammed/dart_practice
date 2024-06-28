@@ -3,16 +3,21 @@ void main() {
 }
 
 void removeDuplicates(List<int> nums) {
-  List<int> c = [];
-  List<int> d = [];
-  nums.sort();
-  for (var i in nums) {
-    if (!c.contains(i)) {
-      c.add(i);
-    } else {
-      d.add();
+  int i = 0;
+  // j = digitValue inside list
+  int j = i + 1;
+
+  // loop to check if the digitValue is shorter than length
+  while (j < nums.length) {
+    // if they both are not same
+    if (nums[i] != nums[j]) {
+      // we increment the index value
+      i++;
+      // than the index will be same as the digitValue
+      nums[i] = nums[j];
     }
+
+    j++;
   }
-  print(c);
-  print(c.length);
+  print(i);
 }
