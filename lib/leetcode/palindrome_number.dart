@@ -1,5 +1,5 @@
 void main() {
-print(  isPalindrome(121));
+  print(isPalindrome(121));
 }
 
 bool isPalindrome(int x) {
