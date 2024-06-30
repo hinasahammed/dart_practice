@@ -128,8 +128,7 @@ void main() {
 
   //   for (int i = 0; i < s.length; i++) {
   //     int currentValue = value[s[i]]!;
-  //     sum += (currentValue > prevValue)
-  //         ? (currentValue - 2 * prevValue)
+  //     sum += (currentValue > prevValue)? (currentValue - 2 * prevValue)
   //         : currentValue;
   //     prevValue = currentValue;
   //   }
