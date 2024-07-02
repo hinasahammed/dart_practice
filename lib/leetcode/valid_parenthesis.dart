@@ -1,39 +1,24 @@
 void main() {
-  var val = isValid("(){}}{");
+  var val = isValid("(]");
   print(val);
 }
 
 bool isValid(String s) {
-  Map para = {
-    "(": ")",
-    "{": "}",
-    "[": "]",
+  Map<String, String> bracketList = {
+    ')': '(',
+    '}': '{',
+    ']': '[',
   };
-  List<bool> c = [];
+  List checkingList = [];
   for (var i = 0; i < s.length; i++) {
-    if (para.containsKey(s[i])) {
-      if (s.length > 1 && i < s.length - 1) {
-        if (s[i + 1] == para[s[i]]) {
-          c.add(true);
-        }
-      } else if (s.length > 1 && i < s.length - 1) {
-        if (para.containsKey(s[i + 1])) {
-          i++;
-          if (s[i + 1] == para[s[i]]) {
-            c.add(true);
-          }
-        } else {
-          c.add(false);
-        }
+    if (bracketList.containsValue(s[i])) {
+      checkingList.add(s[i]);
+    } else if (bracketList.containsKey(s[i])) {
+      if (checkingList.isEmpty || checkingList.last != bracketList[s[i]]) {
+        return false;
       }
+      checkingList.removeLast();
     }
   }
-
-  final trueCount = c.where((element) => element).length;
-  final falsecount = c.where((element) => !element).length;
-  if (trueCount > falsecount) {
-    return true;
-  } else {
-    return false;
-  }
+  return checkingList.isEmpty;
 }
