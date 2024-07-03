@@ -8,7 +8,7 @@ void main() {
         newValList.add(strs[i][j]);
       }
       print(newValList);
-      if (strs[i] == newValList[i]) {
+      if (strs[i][j] == newValList[i]) {
         commonList.add(newValList[i]);
       }
     }
