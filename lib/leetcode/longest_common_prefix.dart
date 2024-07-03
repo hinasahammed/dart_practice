@@ -1,17 +1,25 @@
 void main() {
-  List<String> strs = ["flower", "flow", "flight"];
-  List<String> newValList = [];
-  List<String> commonList = [];
-  for (var i = 0; i < strs.length; i++) {
-    for (var j = 0; j < strs[i].length; j++) {
-      if (i == 0) {
-        newValList.add(strs[i][j]);
-      }
-      print(newValList);
-      if (strs[i][j] == newValList[i]) {
-        commonList.add(newValList[i]);
+  print(longestCommonPrefix(["flower","flow","flight"]));
+}
+
+String longestCommonPrefix(List<String> strs) {
+  if (strs.isEmpty) return "";
+
+  String initialValue = strs[0];
+  for (var i = 1; i < strs.length; i++) {
+    List<String> commonList = [];
+    for (var j = 0; j < strs[i].length && j < initialValue.length; j++) {
+      if (initialValue[j] == strs[i][j]) {
+        commonList.add(strs[i][j]);
+      } else {
+        break;
       }
     }
+    initialValue = commonList.join();
+    if (initialValue.isEmpty) {
+      break;
+    }
   }
-  print(commonList);
+
+  return initialValue;
 }
