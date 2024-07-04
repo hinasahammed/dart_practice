@@ -1,18 +1,25 @@
 void main() {
-  print(lengthOfLastWord("   fly me   to   the moon  "));
+  print(lengthOfLastWord("Hello world"));
 }
 
 int lengthOfLastWord(String s) {
-  List splitted = [];
+  List removedExtraSpace = [];
 
-  int len = 0;
-  String g = s.split(" ").join(" ");
-  print(g);
-  print(splitted);
-  for (var i = 0; i < splitted.length; i++) {
-    if (i == splitted.length - 1) {
-      len = splitted[i].length;
+  for (var i = 0; i < s.length; i++) {
+    if (s[i] != " ") {
+      removedExtraSpace.add(s[i]);
+    } else if (s[i] == " ") {
+      if (i != 0) {
+        if (s[i] == " " && s[i - 1] != " ") {
+          removedExtraSpace.add(" ");
+        }
+      }
     }
   }
-  return len;
+  if (removedExtraSpace[removedExtraSpace.length - 1] == " ") {
+    removedExtraSpace.removeLast();
+  }
+  var joinedVal = removedExtraSpace.join();
+  var splittedVal = joinedVal.split(" ");
+  return splittedVal[splittedVal.length - 1].length;
 }
