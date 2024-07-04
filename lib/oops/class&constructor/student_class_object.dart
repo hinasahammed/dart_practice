@@ -2,7 +2,7 @@ void main() {
   var std = Student();
   std.studentId = 1;
   std.studentName = "hinas";
-  std.studentPlace= "Malappuram";
+  std.studentPlace = "Malappuram";
   std.studentInfo();
 }
 
