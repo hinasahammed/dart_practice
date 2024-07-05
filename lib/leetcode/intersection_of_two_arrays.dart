@@ -143,7 +143,7 @@ List<int> intersect(List<int> nums1, List<int> nums2) {
       }
     }
   }
-  print(num1IntersectionVal);
+  print("num1:$num1IntersectionVal");
   for (var i = 0; i < nums2.length; i++) {
     for (var j = 0; j < nums2.length; j++) {
       if (i != j) {
@@ -155,21 +155,24 @@ List<int> intersect(List<int> nums1, List<int> nums2) {
       }
     }
   }
-  print(num2IntersectionVal);
+  print("num2:$num2IntersectionVal");
 
   var twoIntersection = nums1.toSet().intersection(nums2.toSet()).toList();
-  print(twoIntersection);
+  print("two:$twoIntersection");
   num1IntersectionVal.removeWhere(
     (element) => !twoIntersection.contains(element),
   );
-  print(num1IntersectionVal);
+  print("after remove $num1IntersectionVal");
   num2IntersectionVal.removeWhere(
     (element) => !twoIntersection.contains(element),
   );
+  print("after remove $num2IntersectionVal");
 
   if (num1IntersectionVal.isEmpty && num2IntersectionVal.isEmpty) {
     twoCombined.addAll(twoIntersection);
   } else if (num1IntersectionVal.isEmpty && num2IntersectionVal.isNotEmpty) {
+    twoCombined.addAll(twoIntersection);
+  } else if (num1IntersectionVal.isNotEmpty && num2IntersectionVal.isEmpty) {
     twoCombined.addAll(twoIntersection);
   } else {
     twoCombined.addAll(num1IntersectionVal);
