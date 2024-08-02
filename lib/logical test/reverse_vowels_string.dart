@@ -4,8 +4,10 @@ void main() {
   print("Enter a String");
   String userVal = stdin.readLineSync()!;
   List<int> vowels = [];
+  List<String> v = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
+  
   for (int i = 0; i < userVal.length; i++) {
-    if ('aeiouAEIOU'.contains(userVal[i])) {
+    if (v.contains(userVal[i])) {
       vowels.add(i);
     }
   }
