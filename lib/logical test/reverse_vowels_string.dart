@@ -1,19 +1,23 @@
-// void main() {
-//   String s = "hello";
-//   String sLower = s.toLowerCase();
-//   List<String> vowels = ['a', 'e', 'i', 'o', 'u'];
-//   int prevIndex = -1;
-//   String temp;
-//   for (var i = 0; i < s.length; i++) {
-//     if (vowels.contains(s[i])) {
-      
-//       if (prevIndex == -1) {
-//         prevIndex = i;
-//       } else {
-//         temp = s[prevIndex];
-//         s[prevIndex] = s[i];
-//         s[i]= temp;
-//       }
-//     }
-//   }
-// }
+import 'dart:io';
+
+void main() {
+  print("Enter a String");
+  String userVal = stdin.readLineSync()!;
+  List<int> vowels = [];
+  for (int i = 0; i < userVal.length; i++) {
+    if ('aeiouAEIOU'.contains(userVal[i])) {
+      vowels.add(i);
+    }
+  }
+  List<String> chars = userVal.split('');
+  int left = 0;
+  int right = vowels.length - 1;
+  while (left < right) {
+    String temp = chars[vowels[left]];
+    chars[vowels[left]] = chars[vowels[right]];
+    chars[vowels[right]] = temp;
+    left++;
+    right--;
+  }
+  print(chars.join(''));
+}
