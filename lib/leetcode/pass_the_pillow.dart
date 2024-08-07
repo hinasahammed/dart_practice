@@ -1,20 +1,18 @@
-void main() {
-  print(passThePillow(3, 2));
+int findPillowHolder(int n, int time) {
+  int cycleLength = 2 * (n - 1);
+  int modTime = time % cycleLength;
+
+  if (modTime < n) {
+    return modTime + 1;
+  } else {
+    return 2 * n - modTime - 1;
+  }
 }
 
-int passThePillow(int n, int time) {
-  int count = 0;
-  for (var i = 0; i <= time; i++) {
-    if (i < n) {
-      count++;
-    } else {
-      if (count == 1) {
-        count += time - i + 1;
-        break;
-      } else {
-        count--;
-      }
-    }
-  }
-  return count;
+void main() {
+  int result1 = findPillowHolder(4, 5);
+  print("Output: $result1");
+
+  int result2 = findPillowHolder(3, 2);
+  print("Output: $result2");
 }
