@@ -69,3 +69,18 @@ String addBinary(String a, String b) {
   var result = total.reversed.join();
   return result;
 }
+
+//simple program
+// String addBinary(String a, String b) {
+//   int numA = int.parse(a, radix: 2); // Convert binary string 'a' to an integer
+//   int numB = int.parse(b, radix: 2); // Convert binary string 'b' to an integer
+
+//   int sum = numA + numB; // Sum the two integers
+
+//   return sum.toRadixString(2); // Convert the sum back to a binary string
+// }
+
+// void main() {
+//   print(addBinary("11", "1")); // Output: "100"
+//   print(addBinary("1010", "1011")); // Output: "10101"
+// }
