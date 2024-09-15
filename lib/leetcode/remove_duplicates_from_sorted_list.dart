@@ -3,7 +3,7 @@ void main() {
 }
 
 ListNode? deleteDuplicates(ListNode? head) {
-  print(head);
+  
   return head;
 }
 
