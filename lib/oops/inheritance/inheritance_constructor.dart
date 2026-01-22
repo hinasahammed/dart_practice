@@ -15,5 +15,5 @@ class MacBook extends Laptop {
 }
 
 void main() {
-  var macbook = MacBook("MacBook Pro", "Silver");
+ MacBook("MacBook Pro", "Silver");
 }
